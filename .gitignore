@@ -8,7 +8,6 @@ crosscover.out
 
 *.bench
 
-/agents/mysql/slowlog/parser/corpus/
 /agents/mysql/slowlog/parser/crashers/
 /agents/mysql/slowlog/parser/suppressions/
 /agents/mysql/slowlog/parser/parser-fuzz.zip
