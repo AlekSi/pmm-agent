@@ -8,8 +8,11 @@ setup:
 targets:
   - name: fuzz-slowlog-parser
     setup:
-      - mkdir -p agents/mysql/slowlog/parser/corpus
-      - cp agents/mysql/slowlog/parser/testdata/*.log agents/mysql/slowlog/parser/corpus/
+      - pwd
+      - ls -al
+      - go env
+      - mkdir -p src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/corpus
+      - cp src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/testdata/*.log src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/corpus/
     corpus: agents/mysql/slowlog/parser/corpus
     harness:
       function: Fuzz
