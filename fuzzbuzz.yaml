@@ -3,6 +3,9 @@ language: go
 version: "1.12"
 checkout: github.com/percona/pmm-agent
 setup:
+  - pwd
+  - ls -al
+  - go env
   - make install
 
 targets:
@@ -11,9 +14,9 @@ targets:
       - pwd
       - ls -al
       - go env
-      - mkdir -p src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/corpus
-      - cp src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/testdata/*.log src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/corpus/
-    corpus: agents/mysql/slowlog/parser/corpus
+      - mkdir -p ./src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/corpus
+      - cp ./src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/testdata/*.log ./src/github.com/percona/pmm-agent/agents/mysql/slowlog/parser/corpus/
+    corpus: ./agents/mysql/slowlog/parser/corpus
     harness:
       function: Fuzz
       build_tags: gofuzz
